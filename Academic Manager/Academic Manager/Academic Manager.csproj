@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CEBF1A7-3BC6-410C-A8BC-94692FEB3465}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Academic_Manager</RootNamespace>
+    <AssemblyName>Academic Manager</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hnet.com-image.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Users\GD6\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddressUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddressUserControl.Designer.cs">
+      <DependentUpon>AddressUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\ConsultDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\ConsultDetailsForm.Designer.cs">
+      <DependentUpon>ConsultDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\MockRecordInsUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\MockRecordInsUpForm.Designer.cs">
+      <DependentUpon>MockRecordInsUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\CompetitionInfoDAC.cs" />
+    <Compile Include="Library\ConsultInfoDAC.cs" />
+    <Compile Include="Library\MajorInfoDAC.cs" />
+    <Compile Include="Library\SchoolRecordInfoDAC.cs" />
+    <Compile Include="Library\StudentDetailInfoDAC.cs" />
+    <Compile Include="Library\UniversityInfoDAC.cs" />
+    <Compile Include="Service\CompetitionInfoService.cs" />
+    <Compile Include="Service\ConsultInfoService.cs" />
+    <Compile Include="Service\UniversityInfoService.cs" />
+    <Compile Include="Dialog\RoadSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\RoadSearchForm.Designer.cs">
+      <DependentUpon>RoadSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\SchoolOrMockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\SchoolOrMockForm.Designer.cs">
+      <DependentUpon>SchoolOrMockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\JobInfoDAC.cs" />
+    <Compile Include="MenuForm\ConsultListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\ConsultListForm.Designer.cs">
+      <DependentUpon>ConsultListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\UniversityHomepageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\UniversityHomepageForm.Designer.cs">
+      <DependentUpon>UniversityHomepageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm\JobListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\JobListForm.Designer.cs">
+      <DependentUpon>JobListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm\MajorListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\MajorListForm.Designer.cs">
+      <DependentUpon>MajorListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm\RecordByScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\RecordByScoreForm.Designer.cs">
+      <DependentUpon>RecordByScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm\RecordByStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\RecordByStudentForm.Designer.cs">
+      <DependentUpon>RecordByStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMentForm\AllInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMentForm\AllInfoForm.Designer.cs">
+      <DependentUpon>AllInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMentForm\AwardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMentForm\AwardForm.Designer.cs">
+      <DependentUpon>AwardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMentForm\ConsultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMentForm\ConsultForm.Designer.cs">
+      <DependentUpon>ConsultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\StudentInfoDAC.cs" />
+    <Compile Include="Library\UtilityClass.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMentForm\MockRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMentForm\MockRecords.Designer.cs">
+      <DependentUpon>MockRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ManageMentForm\SchoolRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMentForm\SchoolRecord.Designer.cs">
+      <DependentUpon>SchoolRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\SchoolRecordInsUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\SchoolRecordInsUpForm.Designer.cs">
+      <DependentUpon>SchoolRecordInsUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\StudentInfoInsUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\StudentInfoInsUpForm.Designer.cs">
+      <DependentUpon>StudentInfoInsUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMentForm\UniversityResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMentForm\UniversityResultForm.Designer.cs">
+      <DependentUpon>UniversityResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmOkBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmOkBox.Designer.cs">
+      <DependentUpon>FrmOkBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmYesOrNoBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmYesOrNoBox.Designer.cs">
+      <DependentUpon>FrmYesOrNoBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MaterialMessageBox.cs" />
+    <Compile Include="ManageMentForm\UniversityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMentForm\UniversityForm.Designer.cs">
+      <DependentUpon>UniversityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm\UniversityListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm\UniversityListForm.Designer.cs">
+      <DependentUpon>UniversityListForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddressUserControl.resx">
+      <DependentUpon>AddressUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\ConsultDetailsForm.resx">
+      <DependentUpon>ConsultDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\MockRecordInsUpForm.resx">
+      <DependentUpon>MockRecordInsUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\RoadSearchForm.resx">
+      <DependentUpon>RoadSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\SchoolOrMockForm.resx">
+      <DependentUpon>SchoolOrMockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\ConsultListForm.resx">
+      <DependentUpon>ConsultListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\UniversityHomepageForm.resx">
+      <DependentUpon>UniversityHomepageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\JobListForm.resx">
+      <DependentUpon>JobListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\MajorListForm.resx">
+      <DependentUpon>MajorListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\RecordByScoreForm.resx">
+      <DependentUpon>RecordByScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\RecordByStudentForm.resx">
+      <DependentUpon>RecordByStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMentForm\AllInfoForm.resx">
+      <DependentUpon>AllInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMentForm\AwardForm.resx">
+      <DependentUpon>AwardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMentForm\ConsultForm.resx">
+      <DependentUpon>ConsultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMentForm\MockRecords.resx">
+      <DependentUpon>MockRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMentForm\SchoolRecord.resx">
+      <DependentUpon>SchoolRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\SchoolRecordInsUpForm.resx">
+      <DependentUpon>SchoolRecordInsUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\StudentInfoInsUpForm.resx">
+      <DependentUpon>StudentInfoInsUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMentForm\UniversityResultForm.resx">
+      <DependentUpon>UniversityResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmOkBox.resx">
+      <DependentUpon>FrmOkBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmYesOrNoBox.resx">
+      <DependentUpon>FrmYesOrNoBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMentForm\UniversityForm.resx">
+      <DependentUpon>UniversityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm\UniversityListForm.resx">
+      <DependentUpon>UniversityListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hnet.com-image.ico" />
+    <Content Include="Metro\MetroFramework.txt" />
+    <None Include="Resources\Excel21.png" />
+    <None Include="Resources\excel3.png" />
+    <None Include="Resources\Excel2.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\grades1.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\doctor.png" />
+    <None Include="Resources\scholarship.png" />
+    <None Include="Resources\university.png" />
+    <None Include="Resources\consulting2.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\delete-button.png" />
+    <None Include="Resources\plus2.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\plus1.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\school.png" />
+    <None Include="Resources\save1.png" />
+    <None Include="Resources\pencil1.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\new-user.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\loupe1.png" />
+    <None Include="Resources\loupe.png" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\presentation.png" />
+    <None Include="Resources\trophy.png" />
+    <None Include="Resources\grades.png" />
+    <None Include="Resources\consulting.png" />
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ExcelTranslator">
+      <Guid>{3A39E867-A6D2-43FC-AD49-167CBD864A6B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
